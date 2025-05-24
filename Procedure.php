@@ -21,7 +21,30 @@ class Procedure {
                       procedure_date = :procedure_date, 
                       description = :description, 
                       veterinarian = :veterinarian";
+    
+        $stmt = $this->conn->prepare($query);
+    
+        // Sanitizar dados
+        $this->pet_id = htmlspecialchars(strip_tags($this->pet_id));
+        $this->procedure_name = htmlspecialchars(strip_tags($this->procedure_name));
+        $this->procedure_date = htmlspecialchars(strip_tags($this->procedure_date));
+        $this->description = htmlspecialchars(strip_tags($this->description));
+        $this->veterinarian = htmlspecialchars(strip_tags($this->veterinarian));
+    
+        // Associar parâmetros
+        $stmt->bindParam(':pet_id', $this->pet_id);
+        $stmt->bindParam(':procedure_name', $this->procedure_name);
+        $stmt->bindParam(':procedure_date', $this->procedure_date);
+        $stmt->bindParam(':description', $this->description);
+        $stmt->bindParam(':veterinarian', $this->veterinarian);
+    
+        // Executar e retornar sucesso ou falha
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
     }
+    
 
     public function readByPet($pet_id) {
         $query = "SELECT * FROM " . $this->table . " 
