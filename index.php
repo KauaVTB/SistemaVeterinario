@@ -74,21 +74,157 @@ $pets = $pet->read();
     <meta charset="UTF-8">
     <title>Clínica Veterinária Animal Care</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .header { background-color:green; color: white; padding: 20px; }
-        .procedure-table { margin-top: 20px; background-color: #f8f9fa; padding: 15px; border-radius: 5px; }
-        .card-header h5 { margin-bottom: 0; }
-    </style>
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    background-color: #24A4A1;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .card-header {
+    background-color: #24A4A1;
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-header h5 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .form-control, .form-select {
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(36, 164, 161, 0.3);
+    border-color: #24A4A1;
+  }
+
+ 
+
+  .btn-success {
+    background-color:rgb(62, 240, 104);
+    border: none;
+  }
+
+  .btn-success:hover {
+    background-color:rgb(11, 44, 19);
+   
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color:rgb(1, 68, 139);
+    
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: #212529;
+  }
+
+  .btn-warning:hover {
+    background-color:rgb(204, 163, 41);
+    
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+
+  .btn-danger:hover {
+    background-color:rgb(143, 26, 38);
+   
+  }
+
+  .btn-secondary:hover {
+    transform: scale(1.03);
+  }
+
+  .procedure-table table {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .table th {
+    background-color: #f1f1f1;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .modal-header {
+    background-color: #24A4A1;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .modal-footer .btn {
+    min-width: 100px;
+  }
+
+  .logo {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+ 
+</style>
+
 </head>
 <body>
+    
     <div class="header text-center">
+    <img src="img/logoclinicavet.jpg" alt="Logo da Clínica" class="logo">
         <h1>Clínica Veterinária</h1>
     </div>
 
     <div class="container mt-5">
         <!-- Formulário para Adicionar Pet -->
         <div class="card mb-4">
-            <div class="card-header text-white" style="background-color: green;">
+            <div class="card-header text-white" style="background-color: #24A4A1;">
                 <h5>Cadastrar Novo Pet</h5>
             </div>
             <div class="card-body">
@@ -118,7 +254,7 @@ $pets = $pet->read();
                             <input type="text" name="owner_phone" class="form-control" placeholder="Telefone" required>
                         </div>
                         <div class="col-md-2">
-                            <button type="submit" name="add_pet" class="btn btn-success" style="background-color: green;">Cadastrar</button>
+                            <button type="submit" name="add_pet" class="btn btn-success" style="background-color: #24A4A1;">Cadastrar</button>
                         </div>
                     </div>
                 </form>
