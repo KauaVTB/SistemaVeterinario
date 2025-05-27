@@ -1,10 +1,10 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $port = '3307';
+    private $port = '3306';
     private $db_name = 'vet_clinic';
     private $username = 'root';
-    private $password = '';
+    private $password = '654321';
     public $conn;
 
     public function getConnection() {
